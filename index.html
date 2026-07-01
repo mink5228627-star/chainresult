@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>연구실, 연쇄 | 사건의 전말</title>
-  <meta name="description" content="연구실, 연쇄 — 사건의 전말">
+  <title>쿼츠 호라이즌 1 | 연구실,연쇄 | 사건의 전말</title>
+  <meta name="description" content="쿼츠 호라이즌 1 — 연구실,연쇄 사건의 전말">
   <style>
     :root {
       --bg: #0a0b0d;
-      --panel: #111419;
       --line: #3b414a;
       --text: #e9e7e2;
       --muted: #9da3ab;
@@ -22,18 +21,21 @@
       margin: 0;
       min-height: 100vh;
       color: var(--text);
-      background:
-        radial-gradient(ellipse at top, #1b1f25 0%, transparent 43%),
-        var(--bg);
+      background: radial-gradient(ellipse at top, #1b1f25 0%, transparent 43%), var(--bg);
       font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
       letter-spacing: -0.02em;
     }
     .wrap { width: min(880px, calc(100% - 40px)); margin: 0 auto; }
     header {
       display: flex; justify-content: space-between; gap: 16px; align-items: center;
-      padding: 26px 0; border-bottom: 1px solid var(--line);
+      padding: 22px 0; border-bottom: 1px solid var(--line);
     }
-    .brand { font-weight: 800; letter-spacing: -0.05em; }
+    .brand {
+      display: flex; flex-direction: column; gap: 2px;
+      font-weight: 800; letter-spacing: -0.05em; line-height: 1.12;
+    }
+    .brand-series { color: #c5c8cd; font-size: 13px; letter-spacing: -0.02em; }
+    .brand-title { font-size: 17px; }
     .classification {
       color: #ef9a9a; font: 700 12px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
       letter-spacing: .11em;
@@ -64,26 +66,23 @@
     .record {
       color: var(--ink); background: var(--paper); padding: clamp(28px, 7vw, 68px);
       box-shadow: 0 28px 70px rgba(0,0,0,.38);
-      position: relative;
     }
-    .record::before {
-      content: "CONFIDENTIAL"; position: absolute; top: 23px; right: 26px;
-      color: rgba(158, 27, 27, .66); border: 2px solid rgba(158, 27, 27, .66);
-      padding: 4px 7px; font: 800 12px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .12em; transform: rotate(3deg);
-    }
-    .record-top { padding-right: 110px; border-bottom: 1px solid #a9a296; padding-bottom: 22px; }
+    .record-top { border-bottom: 1px solid #a9a296; padding-bottom: 22px; }
     .record-top p { margin: 7px 0 0; color: #6d675d; font-size: 14px; }
     .record h2 { margin: 0; font-size: clamp(28px, 5vw, 45px); letter-spacing: -0.07em; }
-    .record-section { padding: 39px 0; border-bottom: 1px solid #c5bfb3; }
-    .record-section:last-of-type { border-bottom: 0; }
+    .record-section { padding: 46px 0; }
+    .record-section + .record-section { border-top: 1px solid #c5bfb3; }
+    .chapter-heading { margin: 0 0 28px; padding-left: 18px; border-left: 3px solid #971f1f; }
+    .chapter-subtitle { margin: 7px 0 0; color: #6d675d; font-size: 14px; font-weight: 700; }
+    
     .section-kicker {
-      color: #971f1f; margin-bottom: 8px; font: 800 11px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+      color: #971f1f; margin-bottom: 8px;
+      font: 800 11px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
       letter-spacing: .16em;
     }
-    .record-section h2 { font-size: 24px; margin: 0 0 20px; }
+    .record-section h3 { font-size: 24px; margin: 0 0 20px; letter-spacing: -0.05em; }
     .record-section p {
-      margin: 0 0 18px; font-size: 16px; line-height: 1.95;
+      margin: 0 0 20px; font-size: 16px; line-height: 1.95;
       word-break: keep-all;
     }
     .record-section p:last-child { margin-bottom: 0; }
@@ -97,68 +96,89 @@
       .classification { font-size: 10px; }
       main { padding-top: 48px; }
       .intro { padding-bottom: 62px; }
-      .record-top { padding-right: 0; padding-top: 44px; }
-      .record::before { top: 19px; right: 18px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">연구실, 연쇄</div>
+      <div class="brand" aria-label="쿼츠 호라이즌 1 연구실,연쇄">
+        <span class="brand-series">쿼츠 호라이즌 1</span>
+        <span class="brand-title">연구실,연쇄</span>
+      </div>
       <div class="classification">CLASSIFIED RECORD</div>
     </header>
 
     <main>
       <section class="intro" id="intro">
-        <div class="eyebrow">CASE FILE / 2029</div>
+        <div class="eyebrow">CASE FILE / ~2029</div>
         <h1>사건의 전말</h1>
-        <p class="lead">기록을 열람하면 사건 이전의 인연과<br>그날의 범행, 그리고 반복된 세계의 결말을 확인할 수 있습니다.</p>
+        <p class="lead">숨겨졌던 모든 사건의 진실을 확인할 수 있습니다.</p>
         <button type="button" id="openRecord">기록 열람하기</button>
       </section>
 
       <article class="record" id="record" hidden aria-live="polite">
         <div class="record-top">
           <h2>사건의 전말</h2>
-          <p>연구실, 연쇄 · 열람 등급: 기밀</p>
+          <p>연구실,연쇄 · 열람 등급: 기밀</p>
         </div>
 
         <section class="record-section">
-          <div class="section-kicker">RECORD</div>
-          <h2>2004년</h2>
-              <p>사건으로부터 25년 전인 2004년, 박남규, 이도현, 서하윤 셋은 도심 외곽 마을에서 놀며 그들만의 추억을 만들고 있었다. 당시 서하윤은 오른팔 없이 왼팔로만 생활하며 받은 인간관계의 상처를 저 둘에게 치유받고 있었다.</p>
-              <p>그때의 이도현의 가정은 술만 마시면 다른 사람이 되어 가정폭력을 저지르는 아버지로 인해 내부에서부터 서서히 망가져가고 있었다. 그럼에도 이도현 곁에 박남규와 서하윤이라는 두 존재가 한 줄기 동아줄로 남아 있었다.</p>
-              <p>하지만 박남규가 도심으로 갑작스레 이사하면서 사건이 시작된다. 박남규를 쫓아가다가 차를 피하게 해주려던 이도현에 의해 돌에 머리를 부딪힌 서하윤은 이들의 기억을 잃게 된다. 항상 사진을 찍어주던 이도현은 서하윤에게 사진을 남기고 떠난다. 서하윤은 박남규와 찍힌 사진을 보며 박남규와의 관계만은 떠올리게 되고, 박남규가 걸었던 과학의 길을 걷게 된다.</p>
-              <p>박남규와 이도현이 떠난 서하윤은 다시 일상으로 돌아오지만, 행복했던 삶에서 따돌림당하는 삶을 견디지 못한 채 소시오패스로 변하게 된다.</p>
+          <div class="chapter-heading">
+            <div class="section-kicker">CHAPTER 01</div>
+            <h3>2004년</h3>
+            <p class="chapter-subtitle">세 사람의 인연과 작별</p>
+          </div>
+          <p>사건으로부터 25년 전인 2004년, 박남규,이도현,서하윤 셋은 도심 외각 마을에서 놀며 그들만의 추억을 만들고 있었다. 당시 서하윤은 오른팔 없이 왼팔로만 생활하며 받은 인간관계에 상처를 저 둘에게 치유받고 있었다.</p>
+          <p>그때의 이도현의 가정은 내부에서부터 술만 마시면 다른 사람이 돼 가정폭력을 저지르는 아버지에 의해 서서히 망가져가고 있었다. 그럼에도 이도현 곁에 박남규와 서하윤이라는 두 존재가 한줄기 동앗줄로 남아있었는데.</p>
+          <p>하지만, 박남규가 도심으로 갑작스레 이사하면서 사건이 시작된다. 서하윤은 박남규를 쫓아가다가 차를 피하게 해주려던 이도현에 의해 돌에 머리를 부딪힌다. 그렇게 서하윤은 이들의 기억을 잃게된다. 항상 사진을 찍어주던 이도현이 서하윤에게 사진을 남기고 떠나면서 박남규와 서하윤이 찍힌 사진을 보며 서하윤은 박남규와의 관계만은 떠올리게 되며, 박남규가 걸었던 과학의 길을 걷게된다.</p>
+          <p>박남규와 이도현이 떠난 서하윤은 다시 일상으로 돌아오자, 행복했던 삶에서 따돌림 당하는 삶을 견디지 못한 채 사람을 도구로 보는 소시오패스로 변하게 된다.</p>
         </section>
 
         <section class="record-section">
-          <div class="section-kicker">RECORD</div>
-          <h2>2023년 ~ 2027년</h2>
-              <p>2023년, 남부물리학연구소에서 박남규의 실수로 인해 이수환의 미래인 장팀장이 박남규를 죽이고 실험이 어그러진다. 그 이후 박남규는 TC에 의해 처분되고, 그의 소장직은 임시로 강소은 소장이 맡는다. 이후 이수환이 이를 승계하는 식으로 진행된다.</p>
-              <p>서하윤이 TC에 들어왔을 즈음도 이때다. 2024년, TC에 들어온 서하윤은 기계팔을 이식받고 남부물리학연구소에서 박남규의 흔적을 발견해 편지를 보낸다. 강소은은 그 편지를 받아 보관한다.</p>
-              <p>이전 회차를 통해 이도현의 가족력을 알고 있던 강소은은 의도적으로 이도현에게 술을 선물해 참사를 유도한다. 그렇게 이도현은 결국 망가진다.</p>
-              <p>2027년, 남부물리학연구소에 이시아와 함께 서하윤이 전입한다. 2019년부터 근무하던 이도현은 그 모습을 보고 충격받아 담배를 떨어뜨린다.</p>
+          <div class="chapter-heading">
+            <div class="section-kicker">CHAPTER 02</div>
+            <h3>2023년–2028년</h3>
+            <p class="chapter-subtitle">남부물리학연구소와 복수의 설계</p>
+          </div>
+          <p>그렇게 2023년, 남부물리학연구소에서 박남규의 실수로 인해 이수환의 미래인 장팀장이 박남규를 죽이고 실험이 어그러진다. 그 이후 박남규는 TC에 의해 처분되고서 그의 소장직은 임시로 강소은 소장이 맡고, 그 이후 이수환이 승계하는 식으로 진행된다. 서하윤이 TC에 들어왔을 즘이 이때다.(2024년) TC에 들어와 오른팔에 기계팔을 이식받고서 박남규의 흔적을 남부물리학연구소에서 발견해 편지를 보내고, 이를 강소은이 받아 보관한다. 이후 이도현의 가족력을 이전 회차를 통해 알고 있던 강소은이 의도적으로 이도현에게 술에 약을 타 선물하고서 참사를 유도한다. 그렇게 이도현이 결국 망가진다.</p>
+          <p>2027년, 남부물리학연구소에 서하윤이 전입하게된다. 그 모습을 2019년부터 근무하던 이도현이 보고서 충격받아 담배를 떨어뜨리는 사건이 있었다.</p>
+          <p>남부물리학연구소에 오게 된 뒤에서야 전말의 윤곽이나마 알게 된 서하윤은 분노하지만, TC의 위력을 이미 체감하고 온 뒤였다. 이수환을 지금 분노로 죽이더라도 의미가 없다. 하지만, 죽이지 않으면 달라지는 것도 없다. 그렇게 고심을 하며 시간이 지나가며 계획을 세운다.</p>
+          <p>그렇게 세운 계획. 이수환을 죽이는 걸로는 박남규에 대한 복수도, 생환도 아무것도 보장할 수 없다. 이수환을 ‘이용해야’한다. 강소은을 죽여 TC가 사태를 덮지 못하게 일을 크게 만든 다음, 이수환을 범인으로 몰아낸다. 그러면 ‘모든 세계로부터의 추방’을 TC가 하게 만들어 복수도 이루고 비교적 죄가 가볍던 박남규의 복직도 가능할지도 모른다. 이수환의 복수를 기본으로 깔고서 복직이라는 그 ‘가능성’에 모든 걸 걸기로 했다.</p>
         </section>
 
         <section class="record-section">
-          <div class="section-kicker">RECORD</div>
-          <h2>2029년 · 사건 당일</h2>
-              <p>오전 11시, 이도현은 B동의 끌차를 서하윤에게 전달하는 데 성공한다. 동시에 서하윤은 자신의 방문 뒤쪽 마그네틱 스틱으로 표시된 방문 표시를 ‘EOa’, 즉 좌우반전해서 ‘603’으로 보이게 바꾼다.</p>
-              <p>점심을 먹은 뒤, 서하윤은 누명을 씌울 이수환이 아닌 표적인 강소은 소장을 자신의 방 앞으로 부른다. 연구 성과 분쟁에 대해 이야기하자고 한 것이다. 이어 이수환에게 찾아가 날렵한 손기술로 카드키를 바꿔치기한다.</p>
-              <p>서하윤은 자신의 방으로 돌아와 소장을 들이고 망치로 내려쳐 기절시킨다. 이후 방 안으로 끌고 들어가 비닐로 전신을 밀봉한다. 과정에서 예상치 못한 정전이 일어났지만, 기계팔을 통해 충분히 작업이 가능했다.</p>
-              <p>숨구멍과 목 뒤쪽 기억 저장 장치 포트 부분의 비닐을 칼로 절개한 뒤, 끌차 위에 피해자를 올려두고 좌우반전 고글을 씌운다.</p>
-              <p>정전이 끝나고 피해자가 깨어나 주변 풍경을 이수환의 방으로 착각할 즈음, 의도적으로 기억 저장 장치를 사용한 뒤 망치로 머리를 내려쳐 살해한다.</p>
-              <p>그 뒤 알리바이를 만들기 위해 연구실로 돌아온 서하윤과 김유찬이 만난다. 이후 처음에 훔친 이수환의 카드키를 이용해 이수환의 방으로 시체를 끌차로 이동시켜 현장을 조작하고 나온다. 이어 이도현이 A동에 있던 끌차를 B동의 창고로 옮겨 배치한다.</p>
+          <div class="chapter-heading">
+            <div class="section-kicker">CHAPTER 03</div>
+            <h3>2029년 · 사건 당일</h3>
+            <p class="chapter-subtitle">복수극 시작</p>
+          </div>
+          <p>그리고 2029년, 사건 당일. 오전 11시 이도현은 B동의 끌차를 서하윤에게 전달하는데 성공한다. 동시에 서하윤은 자신의 방문 뒤쪽 마그네틱 스틱으로 표시된 방문 표시를 EOa, 즉 좌우반전해서 603으로 표시되게 바꾼다.</p>
+          <p>그러고서 점심을 먹은 뒤, 서하윤은 누명을 씌울 이수환이 아닌 표적인 강소은 소장에게 자신과 갈등을 빚고 있던 연구 성과 분쟁에 대해 이야기하자며 자신의 방 앞으로 불러냈다. 그러고서 이수환에게 찾아가 날렵한 손기술로 카드키를 바꿔치기한다. 이후 자신의 방으로 돌아와 소장을 들어오게 하고서 망치로 내려쳐 기절시킨다.</p>
+          <p>그러고서 방 안에 끌고 들어와 비닐로 전신을 밀봉한다. 과정에서 예상치 못한 정전이 일어났지만, 기계팔을 통해 충분히 작업이 가능했다. 숨구멍과 목 뒤쪽 기억 저장 장치 포트 부분의 비닐을 칼로 절개해 질식사하지 못하게 한다. 끌차 위에 피해자를 올려두고서 좌우반전 고글을 씌워준다.</p>
+          <p>정전이 끝나고 피해자가 깨어나자, 주변 풍경을 보고서 이수환의 방으로 착각할 즈음. 의도적으로 기억 저장 장치를 사용한 뒤 망치로 머리를 내려쳐 살해한다. 기억 저장 장치는 윗 부분만 남기면 제일 최근에 갱신한 기억만 조각나기에 이번 계획에 최적이다.</p>
+          <p>그 뒤, 알리바이를 만들기 위해 연구실로 돌아온 서하윤과 김유찬이 만났고, 소장의 시체에서 훔친 소장의 카드키로 소장의 방으로 시체를 끌차로 이동시켜 현장을 조작시킨 뒤 문을 끌차로 열어둔 채 나왔다. 그 뒤, 이도현이 A동에 있던 끌차를 B동의 창고로 이동시켜 배치해뒀다.</p>
+          <p>이후로는 이수환이 찾은 기억대로다. 뒤늦게 백영기가 찾아와 현장을 통제했고, 쓰레기통에서 카드키와 망치가 발견되며 자작극의 의심이 커져만갔다. 김유찬이 창고를 확인했었지만, 끌차 트릭에 의해 무마되었다. 결국 모두가 이수환을 투표하며 범인으로 몰리며 죽었다. 그러고선 갑자기 이도현은 자백을 하고서 같이 죽었다.</p>
         </section>
 
         <section class="record-section">
-          <div class="section-kicker">RECORD</div>
-          <h2>종료된 세계들</h2>
-              <p>세계는 에필로그 01110으로 처음 종료된다. First True Ending. 이수환은 이전 회차의 억울함을 기억 저장 장치에 담았지만, 다음 회차에서 기억 저장 장치를 사용하지 않으면서 시작부터 꼬이게 된다.</p>
-              <p>강소은 소장은 자신의 정보통을 통해 이전 회차에서 자신을 살해한 범인으로 이수환이 선정됐음을 전달받고 경계한다. TC는 이수환이 휘말린 상황 자체를 이용하려 했으며, 박남규 소장 때와 마찬가지로 강소은 소장을 버림패로 사용하면서 남부물리학연구소를 거대한 실험장으로 만든다.</p>
-              <p>다음 회차에서는 폭발 루트의 트루 엔딩인 Touch the God으로 세계가 종료된다. 폭발 후 백영기가 중간중간 폭탄을 몇 개 해체해 A동이 무너지지는 않았지만, 그뿐이었다.</p>
-              <p>이 회차의 과정에서 ‘이시아’라는 인물이 추가된 것도 포인트다. 기억을 되찾은 이수환은 서하윤과 이도현의 범행을 밝혀낸다. 하지만 너무 많은 비밀을 고발한 끝에 리모컨의 주도권이 폭발로 넘어간다. 그리고 ‘Kill the Head’를 기억해낸 김유찬의 선택으로 인해 백영기가 살해당하며 종료된다.</p>
+          <div class="chapter-heading">
+            <div class="section-kicker">CHAPTER 04</div>
+            <h3>진짜 15회차</h3>
+            <p class="chapter-subtitle">에필로그 01110</p>
+          </div>
+          <p>그렇게 첫 번째 세계는 에필로그 01110으로 세계를 종료한다.(First True Ending) 이수환은 이전 회차의 억울함을 기억 저장 장치에 담았지만, 다음 회차에서 기억 저장 장치를 사용하지 않으면서 시작부터 꼬이게 된다.</p>
+          <p>강소은 소장은 자신의 정보통을 통해 이전 회차에서 강소은 살해범으로 이수환이 선정됐음을 전달받고서 경계를 합니다. TC는 이수환이 휘말린 상황 자체를 이용하려 했으며, 강소은 소장을 박남규 소장때와 마찬가지로 버림패로 사용하면서 남부물리학연구소를 거대한 실험장으로 만들었습니다.</p>
+          <p>그리고 옵시디언에서는 그 상황을 유심히 관찰하며 이시아를 교묘하게 투입하는데 성공합니다. 그래서 이수환의 이전회차 기억에는 이시아가 처음보는 얼굴로 묘사됩니다.</p>
+        </section>
+
+        <section class="record-section">
+          <div class="chapter-heading">
+            <div class="section-kicker">CHAPTER 05</div>
+            <h3>운명을 향해서</h3>
+            <p class="chapter-subtitle">Touch the God</p>
+          </div>
+          <p>다음 회차에서는 폭발 루트의 트루 엔딩인 Touch the God으로 세계가 종료됩니다. (폭발 후 백영기 사살) 이 회차의 과정에서 ‘이시아’라는 인물이 추가된 것도 포인트입니다. 기억을 되찾은 이수환은 서하윤과 이도현의 범행을 밝혀냅니다. 하지만, 너무 많은 비밀을 고발한 끝에 리모컨의 주도권이 폭발로 넘어가고, “Kill the Head”를 기억해낸 김유찬의 선택으로 인해 백영기가 살해당하며 종료됩니다.</p>
         </section>
 
         <div class="close-row">
@@ -171,26 +191,26 @@
   </div>
 
   <script>
-    const intro = document.getElementById("intro");
-    const record = document.getElementById("record");
-    const openRecord = document.getElementById("openRecord");
-    const closeRecord = document.getElementById("closeRecord");
+    const intro = document.getElementById('intro');
+    const record = document.getElementById('record');
+    const openRecord = document.getElementById('openRecord');
+    const closeRecord = document.getElementById('closeRecord');
 
-    openRecord.addEventListener("click", () => {
+    openRecord.addEventListener('click', () => {
       intro.hidden = true;
       record.hidden = false;
-      history.replaceState(null, "", "#record");
-      record.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, '', '#record');
+      record.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    closeRecord.addEventListener("click", () => {
+    closeRecord.addEventListener('click', () => {
       record.hidden = true;
       intro.hidden = false;
-      history.replaceState(null, "", location.pathname);
-      intro.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, '', location.pathname);
+      intro.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    if (location.hash === "#record") {
+    if (location.hash === '#record') {
       intro.hidden = true;
       record.hidden = false;
     }
