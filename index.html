@@ -3,123 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>쿼츠 호라이즌 1 | 연구실,연쇄</title>
-  <meta name="description" content="쿼츠 호라이즌 1 — 연구실,연쇄 사건의 전말">
+  <title>사건의 전말 | 작품 선택</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=https://mink5228627-star.github.io/Immortalresult/">
   <style>
-    :root {
-      --bg: #0a0b0d;
-      --line: #3b414a;
-      --text: #e9e7e2;
-      --muted: #9da3ab;
-      --accent: #bd3434;
-      --paper: #e7e2d7;
-      --ink: #1b1a18;
-    }
-    * { box-sizing: border-box; }
-    a { color: inherit; text-decoration: none; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
-      background: radial-gradient(ellipse at top, #1b1f25 0%, transparent 43%), var(--bg);
-      font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
-      letter-spacing: -0.02em;
-    }
-    .wrap { width: min(880px, calc(100% - 40px)); margin: 0 auto; }
-    header {
-      display: flex; justify-content: space-between; gap: 16px; align-items: center;
-      padding: 22px 0; border-bottom: 1px solid var(--line);
-    }
-    .brand, .brand-link {
-      display: flex; flex-direction: column; gap: 2px;
-      font-weight: 800; letter-spacing: -0.05em; line-height: 1.12;
-    }
-    .brand-series { color: #c5c8cd; font-size: 13px; letter-spacing: -0.02em; }
-    .brand-title { font-size: 17px; }
-    .classification {
-      color: #ef9a9a; font: 700 12px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .11em;
-    }
-    main { padding: 86px 0 64px; }
-    .intro { text-align: center; padding: 42px 0 96px; }
-    .eyebrow {
-      color: var(--accent); font: 700 12px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .2em; margin-bottom: 18px;
-    }
-    h1 {
-      margin: 0; font-size: clamp(42px, 9vw, 78px); line-height: 1.02;
-      letter-spacing: -0.08em;
-    }
-    .lead {
-      max-width: 470px; margin: 28px auto 0; color: var(--muted);
-      line-height: 1.8; font-size: 15px;
-    }
-    button, .action-button {
-      appearance: none; display: inline-block; border: 1px solid #e46767; border-radius: 2px;
-      margin-top: 42px; padding: 15px 26px; cursor: pointer; color: #fff;
-      background: var(--accent); font: 700 15px/1 "Malgun Gothic", sans-serif;
-      transition: transform .18s ease, background .18s ease;
-    }
-    button:hover, .action-button:hover { transform: translateY(-2px); background: #d64242; }
-    button:focus-visible, .action-button:focus-visible, .brand-link:focus-visible, .back-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
-    .record[hidden] { display: none; }
-    .record {
-      color: var(--ink); background: var(--paper); padding: clamp(28px, 7vw, 68px);
-      box-shadow: 0 28px 70px rgba(0,0,0,.38);
-    }
-    .record-top { border-bottom: 1px solid #a9a296; padding-bottom: 22px; }
-    .record-top p { margin: 7px 0 0; color: #6d675d; font-size: 14px; }
-    .record h2 { margin: 0; font-size: clamp(28px, 5vw, 45px); letter-spacing: -0.07em; }
-    .record-section { padding: 46px 0; }
-    .record-section + .record-section { border-top: 1px solid #c5bfb3; }
-    .chapter-heading { margin: 0 0 28px; padding-left: 18px; border-left: 3px solid #971f1f; }
-    .chapter-subtitle { margin: 7px 0 0; color: #6d675d; font-size: 14px; font-weight: 700; }
-    
-    .section-kicker {
-      color: #971f1f; margin-bottom: 8px;
-      font: 800 11px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .16em;
-    }
-    .record-section h3 { font-size: 24px; margin: 0 0 20px; letter-spacing: -0.05em; }
-    .record-section p {
-      margin: 0 0 20px; font-size: 16px; line-height: 1.95;
-      word-break: keep-all;
-    }
-    .record-section p:last-child { margin-bottom: 0; }
-    .close-row { text-align: center; border-top: 1px solid #c5bfb3; margin-top: 6px; padding-top: 24px; }
-    .close-row button, .close-row .back-button { margin: 0; background: transparent; color: #4b4740; border-color: #777168; }
-    .close-row button:hover, .close-row .back-button:hover { background: #d8d1c5; }
-    footer { padding: 24px 0 36px; text-align: center; color: #68707b; font-size: 12px; }
-    @media (max-width: 520px) {
-      .wrap { width: min(100% - 28px, 880px); }
-      header { padding: 18px 0; }
-      .classification { font-size: 10px; }
-      main { padding-top: 48px; }
-      .intro { padding-bottom: 62px; }
-    }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #171717; color: #efede8; font-family: "Noto Sans KR", "Malgun Gothic", sans-serif; }
+    main { padding: 28px; text-align: center; }
+    a { color: inherit; text-underline-offset: 4px; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand-link" href="index.html" aria-label="첫 화면으로 돌아가기">
-        <span class="brand-series">쿼츠 호라이즌 1</span>
-        <span class="brand-title">연구실,연쇄</span>
-      </a>
-      <div class="classification">CLASSIFIED RECORD</div>
-    </header>
-
-    <main>
-      <section class="intro" id="intro">
-        <div class="eyebrow">CASE FILE / ~2029</div>
-        <h1>사건의 전말</h1>
-        <p class="lead">숨겨졌던 모든 사건의 진실을 확인할 수 있습니다.</p>
-        <a class="action-button" href="case.html">기록 열람하기</a>
-      </section>
-    </main>
-
-    <footer>© Doldori Games. All rights reserved.</footer>
-  </div>
+  <main>
+    <p>사건의 전말을 확인할 작품을 선택해 주세요.</p>
+    <p><a href="https://mink5228627-star.github.io/Immortalresult/">작품 선택 화면으로 이동</a></p>
+  </main>
+  <script>window.location.replace("https://mink5228627-star.github.io/Immortalresult/");</script>
 </body>
 </html>
